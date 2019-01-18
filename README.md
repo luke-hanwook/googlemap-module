@@ -1,1 +1,1 @@
-# backspace-googlemap
+# googlemap-module
