@@ -7,17 +7,17 @@ describe('gmododule.HistoryMapState', ()=>{
       zoom: 3
     })
     markerCluster = new MarkerClusterer(map, markers)
-    history = new gmodule.HistoryMapState(map, markerCluster)
+    history = new gmodule.HistoryMapState(map, markerCluster, {isMaintainedState: true})
   })
 
   describe('의존성 주입', ()=>{
     it('map을 주입받지 않으면 에러를 던진다', ()=>{
-      const actual = ()=>(history = new gmodule.HistoryMapState(null, markerCluster))
+      const actual = ()=>(history = new gmodule.HistoryMapState(null, markerCluster, {isMaintainedState: true}))
       expect(actual).toThrowError()
     })
 
     it('markerCluster를 주입받지 않으면 에러를 던진다', ()=>{
-      const actual = ()=>(history = new gmodule.HistoryMapState(map, null))
+      const actual = ()=>(history = new gmodule.HistoryMapState(map, null, {isMaintainedState: true}))
       expect(actual).toThrowError()
     })
   })
@@ -50,12 +50,12 @@ describe('gmododule.HistoryMapState', ()=>{
     })
   })
 
-  describe('saveCurrentState', ()=>{
-    it('현재 map의 상태를 저장한다', ()=>{
-      const initialSize = history.getSize()
-      history.saveCurrentState()
-      expect(history.getSize()).toBe(initialSize + 1)
-    })
-  })
+  // describe('saveCurrentState', ()=>{
+  //   it('현재 map의 상태를 저장한다', ()=>{
+  //     const initialSize = history.getSize()
+  //     history.saveCurrentState()
+  //     expect(history.getSize()).toBe(initialSize + 1)
+  //   })
+  // })
 
 })

@@ -12,6 +12,34 @@
         margin: 0;
         padding: 0;
       }
+
+      #mapMoveBtn {
+        margin: 10px;
+        border-radius: 3px;
+        box-shadow: 0 2px 6px rgba(0,0,0,.3);
+        cursor: pointer;
+        margin-bottom: 22px;
+        text-align: center;
+      }
+
+      #mapMoveBtn button {
+        background-color: #fff;
+        border: 2px solid #fff;
+      }
+
+      #mapMoveBtn > button {
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+      }
+
+      #mapMoveBtn button div {
+        color: 'rgb(25,25,25)';
+        font-family: 'Roboto,Arial,sans-serif';
+        font-size: 16px;
+        line-height: 38px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
     </style>
     <title>Make Google Map Happy</title>
   </head>
@@ -59,12 +87,15 @@
         var markerCluster = new MarkerClusterer(map, markers,
                     { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 
-        var back = new gmodule.HistoryMapState(map, markerCluster, {
+        var history = new gmodule.HistoryMapState(map, markerCluster, {
           isUseMovekeyOfBrowser: true
         });
+
+        new gmodule.ControlPageMoveView(map, history)
     }
     </script>
     <script type="text/javascript" src="./history-map-state/HistoryMapState.js"></script>
+    <script type="text/javascript" src="./history-map-state/ControlPageMoveView.js"></script>
     <script type="text/javascript" src="./data.json"></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDedPCaGpjZXWe1Cu4udVo3p8XheGDOwlk&callback=initMap&region=KR" async defer></script>
