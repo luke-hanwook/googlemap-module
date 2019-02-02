@@ -28,7 +28,6 @@ gmodule.ControlPageMoveView.prototype.createMapMoveBtnElement = function() {
   divEl.appendChild(forwardButton)
 
   divEl.index = 1;
-  console.log(google.maps.ControlPosition)
   this.map_.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(divEl);
 
   this.bindEvent(divEl)
@@ -37,12 +36,12 @@ gmodule.ControlPageMoveView.prototype.createMapMoveBtnElement = function() {
 gmodule.ControlPageMoveView.prototype.bindEvent = function (divEl) {
   Array.from(divEl.querySelectorAll('button')).forEach((btn)=>{
     btn.addEventListener('click', (e)=>{
-      this.movePage(btn.dataset)
+      this.movePage(btn.getAttribute('data-btn-type'))
     })
   })
 }
 
-gmodule.ControlPageMoveView.prototype.movePage = function({btnType}) {
+gmodule.ControlPageMoveView.prototype.movePage = function(btnType) {
   if(btnType === 'back')
     this.historyMapState_.historyBack()
   else if(btnType === 'forward')
