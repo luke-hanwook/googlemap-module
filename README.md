@@ -4,15 +4,16 @@
 
 ## Description  
 This is a module for customized google maps api.  
-it's an uncompleted project but you can refer to below list
+it's an uncompleted project but you can refer to below list.
 
 1. [history-map-state](https://github.com/luke-hanwook/googlemap-module/tree/master/src/history-map-state)  
-    You can control the map state with browser forward and back button  
+    You can control the map state with browser forward and back button.  
     ```
     var history = new gmodule.HistoryMapState(map, markerCluste, { isUseMovekeyOfBrowser: true });
 
     new gmodule.ControlPageMoveView(map, history)
     ```
+    ![Demo Image](./img/googlemapstate.git?raw=true)
 
 ### Tested Browser
 - Chrome
