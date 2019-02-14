@@ -13,7 +13,7 @@ it's an uncompleted project but you can refer to below list.
 
     new gmodule.ControlPageMoveView(map, history)
     ```
-    ![Demo Image](./img/googlemapstate.git?raw=true)
+    ![Demo Image](./googlemapstate.gif?raw=true)
 
 ### Tested Browser
 - Chrome
